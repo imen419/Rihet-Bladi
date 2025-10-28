@@ -1,0 +1,1223 @@
+
+
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rihet Bladi - خدمة تونسية تقليدية</title>
+  <style>
+    /* === SECTION B2B YASSIR BUSINESS === */
+.b2b-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #120e10;
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: auto;
+  border-top: 3px solid #0b0508;
+}
+
+.b2b-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.b2b-left h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #4b0082;
+  margin: 10px 0 20px;
+}
+
+.b2b-left h2 {
+  font-size: 1.5rem;
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.b2b-left .arrows {
+  font-size: 1.5rem;
+  color: #4b0082;
+  margin-left: 8px;
+}
+
+.b2b-left .subtitle {
+  font-size: 1rem;
+  color: #d8c6c6;
+  margin-bottom: 20px;
+}
+
+.b2b-benefits {
+  list-style: none;
+  padding: 0;
+  color: #d8c6c6;
+  margin-bottom: 30px;
+}
+
+.b2b-benefits li {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.b2b-cta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn.violet {
+  background-color: #4b0082;
+}
+
+.btn.violet:hover {
+  background-color: #3a006a;
+}
+
+.btn.pink {
+  background-color: #ff69b4;
+}
+
+.btn.pink:hover {
+  background-color: #e055a3;
+}
+
+.b2b-right {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+/* === Témoignages === */
+.testimonials {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #151414, #1a1919);
+  text-align: center;
+}
+
+.testimonials .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #4f11ca;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-user img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #56CFCA; /* turquoise Rihet Bladi */
+}
+
+.testimonial-user h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: #222;
+}
+
+.testimonial-user span {
+  font-size: 0.9rem;
+  color: #888;
+}
+.b2b-right img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .b2b-section {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .b2b-left h1 {
+    font-size: 1.8rem;
+  }
+
+  .b2b-right img {
+    max-width: 100%;
+  }
+}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* === NAVIGATION === */
+    .nav-yassir {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-yassir {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #0d47a1;
+    }
+
+    .logo-yassir img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #0d47a1;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background-color: #56CFCA;
+      color: white;
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      padding: 50px 30px;
+      background-color: #0b0b0a;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      color: #e78d07;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #ebe6e6;
+      margin-bottom: 10px;
+    }
+
+    .hero-gallery {
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+    .hero-gallery-track {
+      display: flex;
+      gap: 20px;
+      animation: scrollGallery 20s linear infinite;
+      width: max-content;
+    }
+
+    .hero-gallery-track img {
+      width: 260px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-gallery-track img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* === SERVICES AUTO-SCROLL === */
+     .services-gallery {
+  padding: 50px 30px;
+  background-color: #0b0b0a;
+  text-align: center;
+}
+
+.services-gallery h2 {
+  font-size: 2.5em;
+  color: #e78d07;
+}
+
+.services-gallery p {
+  font-size: 1.2em;
+  color: #ebe6e6;
+  margin-bottom: 10px;
+}
+
+.services-gallery-scroll {
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.services-gallery-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollGallery 20s linear infinite;
+  width: max-content;
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 260px;       /* Largeur fixe */
+  height: 180px;      /* Hauteur fixe */
+  object-fit: cover;  /* Recadre sans déformer */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item p {
+  margin-top: 8px;
+  font-size: 1.1em;
+  color: #ebe6e6;
+}
+
+@keyframes scrollGallery {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+       
+
+      
+
+    /* === FOOTER === */
+     /* ===footer {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      background: linear-gradient(to right, #ff6f00, #ffb74d);
+      color: white;
+      padding: 20px 30px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer a {
+      color: #fffde7;
+      text-decoration: underline;
+    }
+
+    footer img {
+      width: 160px;
+      height: auto;
+      border-radius: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 1.8em;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;=== */
+      
+    :root{
+      --rb-orange:#e4e2cd;
+      --rb-dark:#111317;
+      --rb-text:#0a0a0a;
+      --rb-muted:#101011;
+      --rb-bg:#deceb9;
+      --rb-white:#d98c18;
+      --rb-border:#e7a109;
+      --rb-turquoise:#56CFCA;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:var(--rb-text);background:var(--rb-bg)}
+
+    /* Footer */
+    .rb-footer{background:linear-gradient(180deg, #e2f50dff, rgba(244, 169, 6, 1));
+;border-top:1px solid var(--rb-border)}
+    .rb-container{max-width:1200px;margin:0 auto;padding:32px 20px}
+
+    /* Top call-to-action */
+    .rb-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 0 8px}
+    .rb-top .left{display:flex;align-items:center;gap:14px}
+    .rb-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--rb-border);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--rb-dark);font-weight:600;transition:transform .08s ease,box-shadow .2s}
+    .rb-badge:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .rb-badge svg{width:20px;height:20px}
+    .rb-logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--rb-dark)}
+    .rb-logo-dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--rb-orange),var(--rb-turquoise))}
+
+    /* Link grid */
+    .rb-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:26px;padding:24px 0}
+    .rb-col h4{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--rb-dark)}
+    .rb-col ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+    .rb-col a{color:var(--rb-text);text-decoration:none}
+    .rb-col a:hover{color:var(--rb-orange)}
+
+    /* Bottom bar */
+    .rb-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--rb-border);padding-top:16px;font-size:14px;color:var(--rb-muted)}
+    .rb-legal{display:flex;flex-wrap:wrap;gap:14px}
+    .rb-legal a{color:var(--rb-muted);text-decoration:none}
+    .rb-legal a:hover{color:var(--rb-orange)}
+
+    .rb-lang{display:flex;align-items:center;gap:10px}
+    .rb-lang select{border:1px solid var(--rb-border);border-radius:8px;padding:8px 10px;background:var(--rb-white);color:var(--rb-text)}
+
+    /* Responsive */
+    @media (max-width:1024px){.rb-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media (max-width:640px){
+      .rb-top{flex-direction:column;align-items:flex-start}
+      .rb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .rb-bottom{flex-direction:column;align-items:flex-start}
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- === HEADER & NAV === -->
+  <header>
+    <div class="nav-yassir">
+      <div class="logo-yassir">
+        <img src="images/Logo rbt3.png" alt="Logo">
+        <span>Rihet <strong>Bladi</strong></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="business.php"> Business</a></li>
+        <li><a href="login.php">Connexion </a></li>
+         <li><a href="chatbot.php">chatbot </a></li>
+
+        <li><a href="livraison.php"> Livraison</a></li>
+        <li><a href="Commande.php"> Commande</a></li>
+        <li><a href="partenaires.html"> Partenaires</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- === HERO === -->
+  <section class="hero">
+    <h1>Commandez vos plats tunisiens préférés 🇹🇳</h1>
+    <p>Livraison rapide de plats faits maison, bien emballés</p>
+    <p>Des recettes traditionnelles comme chez vous </p>
+
+    <div class="hero-gallery">
+      <div class="hero-gallery-track">
+        <img src="images/3.png" alt="Couscous">
+        <img src="images/5 (1).png" alt="Ojja">
+        <img src="images/livreur3.jfif  " alt="Lablabi">
+        <img src="images/5.png" alt="Couscous">
+        <img src="images/imentravell.jfif" alt="Ojja">
+        <img src="images/2.jfif " alt="Lablabi">
+      </div>
+    </div>
+  </section>
+
+  <!-- === SERVICES === -->
+  <section class="services-gallery">
+    <h2> Services</h2>
+    <div class="services-gallery-scroll">
+      <div class="services-gallery-track">
+        <div class="gallery-item">
+          <img src="images/2.jfif" alt="Livraison">
+          <p>Livraison</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/liv2.jfif" alt="Transport">
+          <p>Transport</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/besniss 2.jpg" alt="Courses">
+          <p>Courses</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/besniss 2.jpg  " alt="Cuisine artisanale">
+          <p>Cuisine artisanale</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/besniss3.jpg" alt="Colis">
+          <p>Colis à domicile</p>
+        </div>
+        <!-- duplicate for loop -->
+        <div class="gallery-item">
+          <img src="images/happy.jfif" alt="Livraison">
+          <p>Livraison</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/5 (6).png" alt="Transport">
+          <p>Transport</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/besniss1.jpg" alt="pâtisserie">
+          <p>pâtisserie</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/sidi bou 3.jfif  " alt="Cuisine artisanale">
+          <p>Cuisine artisanale</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/proxy-image (12).jfif" alt="Colis">
+          <p>Colis à domicile</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section Inscription -->
+<section class="inscription-section">
+  <div class="inscription-container">
+    
+    <!-- Image -->
+    <div class="inscription-image">
+      <img src="images/inscription.png" alt="Inscription Rihet Bladi">
+    </div>
+    
+    <!-- Texte -->
+    <div class="inscription-content">
+      <h2>Inscription</h2>
+      <p>
+        Inscrivez-vous en cliquant sur le bouton ci-dessous et remplissez toutes 
+        les informations nécessaires relatives à vous et à votre véhicule.
+      </p>
+      
+      <a href="register.php" class="btn-primary">Je m’inscris</a>
+    </div>
+    
+  </div>
+</section>
+  <style>
+
+
+/* ==== VARIABLES RIhet Bladi ==== */
+:root {
+  --rb-violet: #4b0082;
+  --rb-orange: #ff6600;
+  --rb-turquoise: #56CFCA;
+  --rb-dark: #111317;
+  --rb-light: #f9f9f9;
+  --rb-text: #333;
+}
+
+/* Reset */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--rb-text);
+  background: var(--rb-light);
+  line-height: 1.6;
+}
+
+/* ==== NAVBAR ==== */
+.nav-yassir {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; top:0; z-index:100;
+}
+.logo-yassir span {
+  font-size: 1.4rem;
+  color: var(--rb-violet);
+}
+.nav-links {
+  list-style:none; display:flex; gap:25px;
+}
+.nav-links li a {
+  text-decoration:none;
+  color: var(--rb-text);
+  font-weight:600;
+  transition: 0.3s;
+  padding:8px 14px;
+  border-radius:8px;
+}
+.nav-links li a:hover {
+  background: var(--rb-turquoise);
+  color:#fff;
+}
+
+/* ==== HERO ==== */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--rb-violet), var(--rb-orange));
+  color:#fff;
+}
+.hero h1 { font-size:2.8rem; margin-bottom:20px;}
+.hero p { font-size:1.2rem; opacity:0.9; }
+
+/* ==== BUTTONS ==== */
+.btn, .btn-primary {
+  display:inline-block;
+  padding:12px 28px;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+.btn-primary {
+  background: var(--rb-orange);
+  color:#fff;
+}
+.btn-primary:hover { background:#e65c00; }
+.btn {
+  background: var(--rb-violet);
+  color:#fff;
+}
+.btn:hover { background:#35005f; }
+
+/* ==== SECTIONS ==== */
+section { padding:80px 20px; }
+.section-title {
+  font-size:2.2rem;
+  text-align:center;
+  margin-bottom:40px;
+  color: var(--rb-violet);
+}
+.section-description {
+  max-width:700px;
+  margin:0 auto 40px;
+  text-align:center;
+  color:#555;
+}
+
+/* ==== SERVICES (grid) ==== */
+.services-gallery {
+  background:#fff;
+}
+.services-gallery-track {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.gallery-item {
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  padding:20px;
+  text-align:center;
+  transition:0.3s;
+}
+.gallery-item img {
+  width:100%; height:150px; object-fit:cover;
+  border-radius:10px; margin-bottom:15px;
+}
+.gallery-item:hover { transform:translateY(-5px); }
+
+/* ==== INSCRIPTION ==== */
+.inscription-section {
+  background: var(--rb-dark);
+  color:#fff;
+}
+.inscription-container {
+  display:flex; align-items:center; gap:40px; flex-wrap:wrap;
+  max-width:1100px; margin:0 auto;
+}
+.inscription-content h2 { color: var(--rb-orange); }
+
+/* ==== TÉMOIGNAGES ==== */
+.testimonials {
+  background: var(--rb-light);
+}
+.testimonials-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap:25px;
+}
+.testimonial-card {
+  background:#fff;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.testimonial-card:hover { transform:translateY(-8px);}
+.testimonial-user img {
+  width:50px; height:50px; border-radius:50%;
+  border:2px solid var(--rb-turquoise);
+}
+
+/* ==== SOLUTIONS ==== */
+.solutions {
+  display:flex; flex-wrap:wrap; gap:40px; align-items:center;
+  background: linear-gradient(135deg, var(--rb-violet), var(--rb-turquoise));
+  color:#fff;
+  padding:60px 10%;
+}
+.solutions-list li { margin:10px 0; }
+
+/* ==== FOOTER ==== */
+.rb-footer {
+  background: var(--rb-dark);
+  color:#ccc;
+  padding:40px 20px;
+  text-align:center;
+}
+.rb-footer a { color: var(--rb-turquoise); text-decoration:none; }
+.rb-footer a:hover { color: var(--rb-orange); }
+</style>
+
+
+<!-- Section Plateforme Tout-en-un -->
+<section class="allinone-section">
+  <div class="allinone-container">
+    
+    <!-- Texte -->
+    <div class="allinone-content">
+      <h2>Une plateforme tout-en-un pour vos besoins</h2>
+      <p>
+        Avec <strong>Rihet Bladi</strong>, simplifiez la gestion de vos déplacements, commandes 
+        et livraisons depuis une seule application.  
+        Une solution pensée pour les particuliers et les professionnels, intuitive et efficace.
+      </p>
+      
+      <ul class="allinone-points">
+        <li> Application mobile moderne et ergonomique</li>
+        <li> Transport fiable et rapide</li>
+        <li> Commandes et livraisons de plats traditionnels</li>
+        <li> Sécurité et transparence garanties</li>
+      </ul>
+      
+      <div class="allinone-actions">
+        <a href="#" class="btn-primary">Découvrir l’application</a>
+        <a href="#contact" class="btn-secondary">Nous contacter</a>
+      </div>
+    </div>
+    
+    <!-- Image -->
+    <div class="allinone-image">
+      <img src="images/liv.jfif" alt="Aperçu application Rihet Bladi">
+    </div>
+    
+  </div>
+</section>
+
+<style>
+/* === Section All-in-One === */
+.allinone-section {
+  padding: 70px 20px;
+  background: #f9f9f9;
+}
+
+.allinone-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.allinone-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.allinone-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.allinone-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.allinone-points li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.allinone-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: #FF6600; /* Orange */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e65c00;
+}
+
+.btn-secondary {
+  border: 2px solid #56CFCA; /* Turquoise */
+  color: #56CFCA;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #56CFCA;
+  color: #fff;
+}
+
+.allinone-image img {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .allinone-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .allinone-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+</style>
+<!-- Section Formation Rihet Bladi -->
+<section class="formation-section">
+  <div class="formation-container">
+    
+    <!-- Texte -->
+    <div class="formation-content">
+      <h2>Formations Rihet Bladi</h2>
+      <p>
+        Chez <strong>Rihet Bladi</strong>, nous croyons que la réussite de nos partenaires 
+        passe aussi par une bonne préparation.  
+        C’est pourquoi nous proposons des <strong>formations gratuites</strong> pour nos livreurs, vendeurs 
+        et chauffeurs afin de maîtriser nos outils et optimiser leur activité.
+      </p>
+      
+      <ul class="formation-points">
+        <li> Sessions en ligne et en présentiel</li>
+        <li>Utilisation de l’application pas à pas</li>
+        <li> Conseils pour développer votre activité</li>
+        <li> Accompagnement personnalisé</li>
+      </ul>
+      
+      <div class="formation-actions">
+        <a href="#inscription" class="btn-primary">S’inscrire à une formation</a>
+        <a href="#contact" class="btn-secondary">En savoir plus</a>
+      </div>
+    </div>
+    
+    <!-- Image -->
+    <div class="formation-image">
+      <img src="images/bisniss7.jpg" alt="Formation Rihet Bladi">
+    </div>
+    
+  </div>
+</section>
+
+<style>
+/* === Section Formation === */
+.formation-section {
+  padding: 70px 20px;
+  background: linear-gradient(135deg, #060606, #01070a);
+}
+
+.formation-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.formation-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #490dd4;
+}
+
+.formation-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #f9f2f2;
+  margin-bottom: 25px;
+}
+
+.formation-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.formation-points li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #fcf1f1;
+}
+
+.formation-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: #FF6600; /* Orange Rihet Bladi */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e65c00;
+}
+
+.btn-secondary {
+  border: 2px solid #56CFCA; /* Turquoise */
+  color: #56CFCA;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #56CFCA;
+  color: #fff;
+}
+
+.formation-image img {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .formation-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .formation-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+</style>
+<!-- Section FAQ -->
+<section class="faq-section">
+  <div class="faq-container">
+    <h2 class="faq-title">Questions souvent posées</h2>
+    <p class="faq-intro">Retrouvez ici les réponses aux questions les plus fréquentes sur Rihet Bladi.</p>
+    
+    <div class="faq-item">
+      <button class="faq-question">Comment fonctionne Rihet Bladi ?</button>
+      <div class="faq-answer">
+        <p>Rihet Bladi est une plateforme qui vous permet de commander, livrer ou vendre des plats traditionnels tunisiens en toute simplicité, directement depuis l’application.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Quels services propose l’application ?</button>
+      <div class="faq-answer">
+        <p>L’application vous offre plusieurs solutions : transport, commande de repas, livraison, ainsi qu’un espace dédié aux vendeurs et chauffeurs partenaires.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Comment puis-je devenir partenaire (livreur, vendeur ou chauffeur) ?</button>
+      <div class="faq-answer">
+        <p>Il vous suffit de remplir le formulaire d’inscription disponible dans la section <strong>Devenir Partenaire</strong>. Nos équipes vous contacteront pour la suite.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Quels moyens de paiement sont acceptés ?</button>
+      <div class="faq-answer">
+        <p>Nous acceptons les paiements en ligne (carte bancaire, Paymee, Stripe) ainsi que le paiement à la livraison.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* === FAQ Section === */
+.faq-section {
+  padding: 70px 20px;
+  background: #090909;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #5e0ddf;
+}
+
+.faq-intro {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: #e60977;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  color: #0c21d7; /* Orange Rihet Bladi */
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+  content: "−";
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 15px 15px 15px;
+  font-size: 1rem;
+  color: #fef7f7;
+  line-height: 1.6;
+}
+</style>
+
+<script>
+// Accordéon FAQ
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(q => {
+  q.addEventListener("click", () => {
+    q.classList.toggle("active");
+    const answer = q.nextElementSibling;
+    answer.style.display = (answer.style.display === "block") ? "none" : "block";
+  });
+});
+</script>
+
+  <!-- === FOOTER === -->
+
+</head>
+<body>
+
+  <footer class="rb-footer">
+    <div class="rb-container">
+
+      <!-- Bandeau Télécharger l'app -->
+      <div class="rb-top">
+        <div class="left">
+          <div class="rb-logo" aria-label="Rihet Bladi">
+            <span class="rb-logo-dot" aria-hidden="true"></span>
+            <span>Rihet Bladi</span>
+          </div>
+          <span style="font-weight:700;color:var(--rb-dark)">Télécharger l'app</span>
+        </div>
+        <div class="right" style="display:flex;gap:10px;flex-wrap:wrap">
+          <!-- Badges Google Play & App Store (placeholders) -->
+          <a class="rb-badge" href="#" aria-label="Télécharger sur Google Play">
+            <!-- Play icon -->
+            <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M96 96l240 160L96 416V96z" fill="#34A853"/><path d="M96 96l144 144L96 384V96z" fill="#188038"/><path d="M240 240l64-64 112 112-112 112-64-64" fill="#EA4335"/><path d="M304 176l-64 64 64 64 64-64-64-64z" fill="#FBBC04"/></svg>
+            <span>Google Play</span>
+          </a>
+          <a class="rb-badge" href="#" aria-label="Télécharger sur l'App Store">
+            <!-- Apple icon -->
+            <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.5-54.4 44.5-80.4 46.5-81.7-25.4-37.1-64.9-42.1-78.9-42.7-33.6-3.4-65.6 19.8-82.6 19.8-16.8 0-43-19.3-70.6-18.7-36.4.6-70 21.1-88.7 53.6-37.8 65.8-9.7 163.5 27.1 217.1 18 26 39.4 55.2 67.7 54 27.2-1.1 37.5-17.5 70.5-17.5s41.6 17.5 70.6 17.1c29.3-.5 47.9-26.4 65.8-52.5 20.7-30.4 29.2-59.7 29.6-61.2-.6-.3-56.9-21.7-57.1-87.3zM259.8 115.2c14.8-17.9 24.8-42.9 22-67.9-21.2.8-46.9 14.1-62.2 32-13.7 15.8-25.6 41.3-22.4 65.8 23.9 1.9 48.4-12.1 62.6-29.9z"/></svg>
+            <span>App Store</span>
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Grille de liens -->
+      <div class="rb-grid" role="navigation" aria-label="Liens de pied de page">
+        <div class="rb-col">
+          <h4>Nos Services</h4>
+          <ul>
+            <li><a href="#">Rihet bladi Cash</a></li>
+            <li><a href="#">Rihet bladi Ride</a></li>
+            <li><a href="#">Rihet bladi Food</a></li>
+            <li><a href="#">Rihet bladi Market</a></li>
+            <li><a href="#">Rihet bladi B2B</a></li>
+            <li><a href="#">Commander pour vos proches</a></li>
+          </ul>
+        </div>
+        <div class="rb-col">
+          <h4>Nos partenaires</h4>
+          <ul>
+            <li><a href="#">Chauffeurs</a></li>
+            <li><a href="#">Livreurs</a></li>
+            <li><a href="#">Restaurants</a></li>
+            <li><a href="#">Magasins</a></li>
+            <li><a href="#">Rihet bladi Agent</a></li>
+            <li><a href="#">Entreprise</a></li>
+          </ul>
+        </div>
+        <div class="rb-col">
+          <h4>À propos</h4>
+          <ul>
+            <li><a href="#">Offres d'emploi</a></li>
+            <li><a href="#">Actualités</a></li>
+            <li><a href="#">Assistance</a></li>
+          </ul>
+        </div>
+        <div class="rb-col">
+          <h4>Travailler avec nous</h4>
+          <ul>
+            <li><a href="#">Devenir chauffeur</a></li>
+            <li><a href="#">Devenir livreur</a></li>
+            <li><a href="#">Devenir partenaire</a></li>
+          </ul>
+        </div>
+        <div class="rb-col">
+          <h4>Help center</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Nous contacter</a></li>
+          </ul>
+        </div>
+        <div class="rb-col">
+          <h4>Global</h4>
+          <ul>
+            <li><a href="#">Français</a></li>
+            <li><a href="#">العربية</a></li>
+            <li><a href="#">English</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bas de page -->
+      <div class="rb-bottom">
+        <div class="rb-legal">
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">Conditions Générales d’Utilisation</a>
+          <a href="#">Cookies</a>
+        </div>
+        <div class="rb-lang">
+          <label for="lang" style="color:var(--rb-muted)">Langue</label>
+          <select id="lang" name="lang">
+            <option value="fr" selected>Français</option>
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+#paragraphe{list-style:none;
+     		font-family:arial;
+			font-size:18px;
+			margin:0 auto;
+			padding:0;
+			width:400px;
+			}
+#paragraphe li{border-bottom:2px solid #0000FF;
+				position:relative;
+				cursor:pointer;}
+#paragraphe h2{font-size:23px;
+			   font-family:Arial, Helvetica, sans-serif;
+			   }
+#paragraphe p{ font-family:Arial, Helvetica, sans-serif;
+			   font-size:16px;
+			   /* on utilise display none pour cacher les paragraphes*/
+			   display:none;
+			   }  
+#paragraphe span{   position:absolute;
+                    right:5px;
+					color:#FF0000;
+					top:25px;}
+					
+					
+					
+					
+					

@@ -1,0 +1,239 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partenaires - ريحة بلادي</title>
+  <style>
+    .boton-PARTNERS {
+  background-color: #28a745; /* Vert vif bootstrap */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.boton-PARTNERS:hover {
+  background-color: #218838; /* Vert plus foncé au hover */
+  box-shadow: 0 6px 15px rgba(33, 136, 56, 0.6);
+}
+
+/* Exemple d’effet "scroll" si tu veux que ce bouton soit sticky (fixé à l’écran pendant le scroll) */
+.boton-PARTNERS.scrollable {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  /* Ajoute une animation si tu veux un effet de déplacement */
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px 2px rgba(40, 167, 69, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 15px 6px rgba(40, 167, 69, 0.9);
+  }
+}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+ .nav-yassir {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-yassir {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #0d47a1;
+    }
+
+    .logo-yassir img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #0d47a1;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background-color: #56CFCA;
+      color: white;
+    }
+     
+    /* Hero */
+    .hero {
+      background: linear-gradient(to right, #1b1b1c, #2a16d9);
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      color: #18e330;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #f0e3e3;
+      font-size: 1.1rem;
+    }
+
+    /* Partners Section */
+    .partners {
+      padding: 40px 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .partner-card {
+       background: linear-gradient(to right, #1b1b1c, #2a16d9);
+
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .partner-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .partner-card h3 {
+      padding: 15px;
+      font-size: 1.1rem;
+      color: #21cb12;
+    }
+
+    /* Footer */
+    footer {
+            background: linear-gradient(to right, #1b1b1c, #2a16d9);
+
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #fffde7;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-yassir">
+      <div class="logo-yassir">
+        <img src="images/Logo rbt.png" alt="Logo">
+        <span>Rihet <strong>Bladi</strong></span>
+      </div>
+      <ul class="nav-links">
+         <li><a href="index.html"> Accueil</a></li>
+        <li><a href="login.php">Connexion</a></li>
+         <li><a href="chatbot.php">chatbot </a></li>
+
+        <li><a href="business.php"> Business</a></li>
+
+        <li><a href="livraison.php">Livraison</a></li>
+        <li><a href="Commande.php">Commande</a></li>
+
+      
+        <li><a href="partenaires.html"> Partenaires</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>  Partenaires</h1>
+    <p>Pâtisseries artisanales tunisiennes qui partagent notre amour du goût 🇹🇳</p>
+  </section>
+
+  <!-- PARTNERS GALLERY -->
+  <section class="partners">
+    <div class="partner-card">
+     <img src="images/afri.jfif" alt="masmoudi">
+             <a href="madam chocho.php" class="boton-PARTNERS">madam chocho</a>
+
+
+      <h3> madam chocho</h3>
+    </div>
+    <div class="partner-card">
+     <img src="images/livreur 5.jfif" alt="Couscous">
+             <a href="commande.php" class="boton-PARTNERS">ex1</a>
+
+
+     <h3> ex1</h3>
+    </div>
+    <div class="partner-card">
+        <img src="images/entrep.jfif" alt="la rose">
+                <a href="commande.php" class="boton-PARTNERS">ex2</a>
+
+      <h3>ex2</h3>
+    </div>
+    <div class="partner-card">
+        <img src="images/administrateur.jfif" alt="dar tunie hlow">
+                <a href="commande.php" class="boton-PARTNERS">ex3</a>
+
+      <h3>ex3</h3>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Rihet Bladi - Avec nos partenaires pâtissiers tunisiens</p>
+    <p>📧 <a href="mailto:contact@rihetbladi.tn">contact@rihetbladi.tn</a></p>
+  </footer>
+
+</body>
+</html>
