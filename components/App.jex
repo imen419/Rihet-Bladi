@@ -1,0 +1,421 @@
+# frontend/package.json
+{
+  "name": "rihet-bladi-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  }
+}
+
+# frontend/vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 5173,
+  }
+})
+
+# frontend/index.html
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rihet Bladi</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+# frontend/src/main.jsx
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App.jsx'
+import './index.css'
+
+createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+)
+
+# frontend/src/index.css
+:root { --brand: #ff6f00; --dark: #111; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:#f7f7f7; color:#222; }
+a { color: inherit; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+.btn { display:inline-block; padding:12px 18px; border-radius:12px; border:2px solid var(--brand); color:var(--brand); background:#fff; cursor:pointer; font-weight:700; }
+.btn.primary { background: var(--brand); color:#fff; border-color: var(--brand); }
+.grid { display:grid; gap:16px; }
+.card { background:#fff; padding:16px; border-radius:14px; box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+input, select { width:100%; padding:10px 12px; border:1.5px solid #ddd; border-radius:10px; }
+
+/* nav */
+.nav { position: sticky; top:0; z-index:1000; background:#fff; border-bottom:1px solid #eee; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+.nav-inner { display:flex; align-items:center; justify-content:space-between; padding:12px 24px; }
+.brand { display:flex; align-items:center; gap:10px; font-weight:800; color:#0d47a1; }
+.brand img { width:40px; height:40px; border-radius:50%; object-fit:cover; border:2px solid #0d47a1; }
+.links { display:flex; gap:14px; }
+.links a { text-decoration:none; color:#444; padding:8px 12px; border-radius:10px; }
+.links a:hover { background:#eee; }
+.burger { display:none; background:none; border:0; font-size:26px; }
+@media (max-width: 800px){
+  .links { display:none; flex-direction:column; padding:12px 24px; }
+  .links.open { display:flex; }
+  .burger { display:block; }
+}
+
+.hero { background: linear-gradient(90deg, #0c0c0c, #1a1a1a); color:#fff; padding:60px 0; }
+.hero h1 { font-size: clamp(28px, 4vw, 44px); margin:0 0 14px; }
+.hero p { color:#ddd; }
+
+.menu-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.menu-img { width:100%; height:150px; object-fit:cover; border-radius:12px; }
+
+.footer { background:#fff; border-top:1px solid #eee; padding:24px; text-align:center; color:#666; }
+
+# frontend/src/api.js
+import axios from 'axios'
+
+export const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
+export const api = axios.create({
+  baseURL: `${API_BASE}/api`,
+  withCredentials: true,
+})
+
+export const getPlats = () => api.get('/plats').then(r => r.data)
+export const submitCommande = (payload) => api.post('/commande', payload).then(r => r.data)
+export const login = (email, password) => api.post('/login', { email, password }).then(r => r.data)
+export const register = (data) => api.post('/register', data).then(r => r.data)
+export const getTestimonials = () => api.get('/testimonials').then(r => r.data)
+
+# frontend/src/components/Header.jsx
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
+
+export default function Header(){
+  const [open, setOpen] = React.useState(false)
+  const { pathname } = useLocation()
+  const isActive = (to) => pathname === to ? { background:'#eee' } : {}
+
+  return (
+    <nav className="nav">
+      <div className="nav-inner container">
+        <div className="brand">
+          <img src="/images/Logo_rbt.png" alt="Rihet Bladi" />
+          <span>Rihet <strong>Bladi</strong></span>
+        </div>
+        <button className="burger" onClick={()=>setOpen(!open)} aria-label="Menu">☰</button>
+        <div className={"links " + (open ? 'open' : '')} onClick={()=>setOpen(false)}>
+          <Link style={isActive('/')} to="/">Accueil</Link>
+          <Link style={isActive('/menu')} to="/menu">Menu</Link>
+          <Link style={isActive('/commande')} to="/commande">Commande</Link>
+          <Link style={isActive('/business')} to="/business">Business</Link>
+          <Link style={isActive('/login')} to="/login">Connexion</Link>
+        </div>
+      </div>
+    </nav>
+  )
+}
+
+# frontend/src/components/Hero.jsx
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+export default function Hero(){
+  return (
+    <section className="hero">
+      <div className="container">
+        <span style={{color:'#ff9c4d', fontWeight:800}}>نكهة تونسية بأيادٍ نسائية</span>
+        <h1>Rihet Bladi — أكلات محفوظة تونسية أصيلة</h1>
+        <p>أطلب conserve تونسية: هريسة، سلاطة مشوية، زرير… مع توصيل سريع ودفع آمن.</p>
+        <div style={{display:'flex', gap:10, marginTop:16}}>
+          <Link className="btn primary" to="/menu">إكتشف القائمة</Link>
+          <a className="btn" href="#about">إعرف أكثر</a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+# frontend/src/components/Menu.jsx
+import React from 'react'
+import { getPlats } from '../api'
+
+export default function Menu({ onAdd }){
+  const [items, setItems] = React.useState([])
+  const [loading, setLoading] = React.useState(true)
+  const [error, setError] = React.useState('')
+
+  React.useEffect(()=>{
+    let mounted = true
+    getPlats()
+      .then(data=>{ if(mounted){ setItems(data); setLoading(false) } })
+      .catch(e=>{ if(mounted){ setError('تعذر جلب القائمة'); setLoading(false) } })
+    return ()=>{ mounted=false }
+  },[])
+
+  if(loading) return <div className="container" style={{padding:24}}>جاري التحميل…</div>
+  if(error) return <div className="container" style={{padding:24, color:'crimson'}}>{error}</div>
+
+  return (
+    <div className="container" style={{padding:'28px 0'}}>
+      <h2>القائمة</h2>
+      <div className="grid menu-grid" style={{marginTop:16}}>
+        {items.map(p=> (
+          <article key={p.id} className="card">
+            <img className="menu-img" src={p.image || '/images/placeholder.jpg'} alt={p.nom} />
+            <h3 style={{margin:'10px 0 6px'}}>{p.nom}</h3>
+            {p.description && <p style={{minHeight:40, color:'#555'}}>{p.description}</p>}
+            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginTop:10}}>
+              <strong>{Number(p.prix).toFixed(2)} DT</strong>
+              {onAdd && <button className="btn primary" onClick={()=>onAdd(p)}>أضف</button>}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+# frontend/src/components/Commande.jsx
+import React from 'react'
+import Menu from './Menu'
+import { submitCommande } from '../api'
+
+export default function Commande(){
+  const [cart, setCart] = React.useState([])
+  const [sending, setSending] = React.useState(false)
+  const [msg, setMsg] = React.useState('')
+
+  const addToCart = (item)=>{
+    setCart(prev=>{
+      const found = prev.find(x=>x.id===item.id)
+      if(found){ return prev.map(x=> x.id===item.id ? {...x, qty:x.qty+1} : x) }
+      return [...prev, { ...item, qty:1 }]
+    })
+  }
+
+  const updateQty = (id, qty)=>{
+    setCart(prev=> prev.map(x=> x.id===id ? {...x, qty: Math.max(1, qty)} : x))
+  }
+  const removeItem = (id)=> setCart(prev=> prev.filter(x=> x.id!==id))
+
+  const total = cart.reduce((s,x)=> s + (Number(x.prix)||0) * x.qty, 0)
+
+  const handleSubmit = async (e)=>{
+    e.preventDefault()
+    if(cart.length===0){ setMsg('أضف منتجات قبل الإرسال'); return }
+    setSending(true); setMsg('')
+    try{
+      const payload = {
+        client: { nom: e.target.nom.value, email: e.target.email.value, telephone: e.target.telephone.value || '' },
+        items: cart.map(x=> ({ plat_id: x.id, quantite: x.qty })),
+      }
+      const res = await submitCommande(payload)
+      setMsg('تم إرسال الطلب بنجاح، رقم الطلب: ' + (res?.order_id || ''))
+      setCart([])
+      e.target.reset()
+    }catch(err){
+      setMsg('فشل إرسال الطلب')
+    } finally{ setSending(false) }
+  }
+
+  return (
+    <div className="container" style={{padding:'28px 0'}}>
+      <h2>إطلب الآن</h2>
+      <Menu onAdd={addToCart} />
+
+      <div className="grid" style={{gridTemplateColumns:'2fr 1fr', marginTop:24}}>
+        <div className="card">
+          <h3>المشتريات</h3>
+          {cart.length===0 && <p style={{color:'#777'}}>السلة فارغة</p>}
+          {cart.map(item=> (
+            <div key={item.id} style={{display:'grid', gridTemplateColumns:'1fr 90px 90px 30px', gap:10, alignItems:'center', margin:'10px 0'}}>
+              <span>{item.nom}</span>
+              <input type="number" min="1" value={item.qty} onChange={(e)=>updateQty(item.id, parseInt(e.target.value||'1'))} />
+              <strong>{(Number(item.prix)*item.qty).toFixed(2)} DT</strong>
+              <button className="btn" onClick={()=>removeItem(item.id)}>X</button>
+            </div>
+          ))}
+          <div style={{display:'flex', justifyContent:'space-between', marginTop:12}}>
+            <strong>المجموع</strong>
+            <strong>{total.toFixed(2)} DT</strong>
+          </div>
+        </div>
+
+        <form className="card" onSubmit={handleSubmit}>
+          <h3>بيانات التوصيل</h3>
+          <label>الإسم الكامل</label>
+          <input name="nom" required placeholder="الإسم" />
+          <label style={{marginTop:8}}>البريد الإلكتروني</label>
+          <input name="email" type="email" required placeholder="example@email.com" />
+          <label style={{marginTop:8}}>الهاتف</label>
+          <input name="telephone" placeholder="20 000 000" />
+          <button disabled={sending} className="btn primary" style={{marginTop:12}}>
+            {sending? 'جارٍ الإرسال…' : 'إرسال الطلب'}
+          </button>
+          {msg && <p style={{marginTop:10}}>{msg}</p>}
+        </form>
+      </div>
+    </div>
+  )
+}
+
+# frontend/src/components/Business.jsx
+import React from 'react'
+
+export default function Business(){
+  return (
+    <section className="container" style={{padding:'28px 0'}}>
+      <h2>Rihet Bladi Business</h2>
+      <p>حل للشركات لإدارة الطلبات بالجملة، فواتير، وتتبع الشحنات من منصة واحدة.</p>
+      <div className="grid" style={{gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', marginTop:16}}>
+        {['لوحة تحكم','حسابات متعددة','تقارير','دفع آمن'].map((t,i)=> (
+          <div key={i} className="card"><h3>{t}</h3><p style={{color:'#555'}}>مزايا تناسب احتياجاتك.</p></div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+# frontend/src/components/Testimonials.jsx
+import React from 'react'
+import { getTestimonials } from '../api'
+
+export default function Testimonials(){
+  const [items, setItems] = React.useState([])
+  React.useEffect(()=>{ getTestimonials().then(setItems).catch(()=>setItems([])) },[])
+  if(!items.length) return null
+  return (
+    <section className="container" style={{padding:'28px 0'}}>
+      <h2>آراء الزبائن</h2>
+      <div className="grid" style={{gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', marginTop:16}}>
+        {items.map((t,i)=> (
+          <div key={i} className="card">
+            <p style={{fontStyle:'italic'}}>{t.message}</p>
+            <div style={{marginTop:10, color:'#555'}}>— {t.nom}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+# frontend/src/components/Footer.jsx
+import React from 'react'
+export default function Footer(){
+  return (
+    <footer className="footer">
+      <div className="container">
+        <p>© {new Date().getFullYear()} Rihet Bladi — Tous droits réservés.</p>
+      </div>
+    </footer>
+  )
+}
+
+# frontend/src/components/Login.jsx
+import React from 'react'
+import { login, register } from '../api'
+
+export default function Login(){
+  const [isLogin, setIsLogin] = React.useState(true)
+  const [msg, setMsg] = React.useState('')
+
+  const onSubmit = async (e)=>{
+    e.preventDefault(); setMsg('')
+    const form = new FormData(e.currentTarget)
+    try{
+      if(isLogin){
+        const res = await login(form.get('email'), form.get('password'))
+        setMsg(res?.message || 'تم تسجيل الدخول')
+      }else{
+        const res = await register({
+          nom: form.get('nom'), prenom: form.get('prenom'), email: form.get('email'), password: form.get('password')
+        })
+        setMsg(res?.message || 'تم إنشاء الحساب')
+      }
+      e.currentTarget.reset()
+    }catch{
+      setMsg('حدث خطأ')
+    }
+  }
+
+  return (
+    <div className="container" style={{padding:'28px 0'}}>
+      <h2>{isLogin ? 'تسجيل الدخول' : 'إنشاء حساب'}</h2>
+      <form className="card" onSubmit={onSubmit}>
+        {!isLogin && (
+          <>
+            <label>الإسم</label><input name="nom" required />
+            <label style={{marginTop:8}}>اللقب</label><input name="prenom" required />
+          </>
+        )}
+        <label style={{marginTop:8}}>البريد</label><input name="email" type="email" required />
+        <label style={{marginTop:8}}>كلمة السر</label><input name="password" type="password" required />
+        <button className="btn primary" style={{marginTop:12}}>{isLogin? 'دخول' : 'تسجيل'}</button>
+        <button type="button" className="btn" style={{marginTop:12}} onClick={()=>setIsLogin(!isLogin)}>
+          {isLogin? 'إنشاء حساب جديد' : 'لدي حساب'}
+        </button>
+        {msg && <p style={{marginTop:10}}>{msg}</p>}
+      </form>
+    </div>
+  )
+}
+
+# frontend/src/App.jsx
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header.jsx'
+import Hero from './components/Hero.jsx'
+import Menu from './components/Menu.jsx'
+import Commande from './components/Commande.jsx'
+import Business from './components/Business.jsx'
+import Testimonials from './components/Testimonials.jsx'
+import Footer from './components/Footer.jsx'
+import Login from './components/Login.jsx'
+
+export default function App(){
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<>
+          <Hero />
+          <Menu />
+          <Business />
+          <Testimonials />
+        </>} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/commande" element={<Commande />} />
+        <Route path="/business" element={<Business />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <Footer />
+    </>
+  )
+}

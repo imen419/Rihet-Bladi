@@ -1,23 +1,25 @@
 
 
+<?php
+
 
 <?php
-// Connexion à la base de données
-$host = 'localhost';
-$dbname = 'inscription';
-$username = 'root';
-$password = '';
+$host = 'sql105.infinityfree.com';
+$dbname = 'if0_39873671_rihitbledi';
+$dbuser = 'if0_39873671';
+$dbpass = 'لمة_المرور_ك';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbuser, $dbpass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // الاتصال ناجح
 } catch (PDOException $e) {
-    die("Erreur de connexion : " . $e->getMessage());
+    die("Erreur de connexion à la base de données: " . $e->getMessage());
 }
+?>
 
 // Initialisation message de retour
 $messageRetour = '';
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération et nettoyage des données
@@ -39,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$nom, $adresse, $plat, $quantite, $email, $prix]);
 
         // Envoi email de confirmation
-        $to      = $email;
         $subject = "Confirmation de votre commande Rihet Bladi";
         $body    = "Bonjour $nom,\n\nMerci pour votre commande : $quantite kg de $plat.\nAdresse : $adresse\nTotal à payer : $prix TND\n\nNous vous contacterons bientôt.\n\n— Équipe Rihet Bladi";
         $headers = "From: no-reply@rihetbladi.tn";
@@ -49,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $messageRetour = "<p style='color:green;'>✅ Commande enregistrée avec succès. Un email de confirmation a été envoyé à $email.</p>";
     }
 }
-
 ?>
 
 
@@ -644,3 +644,6 @@ if ($messageRetour) {
 
 </body>
 </html>
+
+
+

@@ -454,7 +454,7 @@
   <header>
     <div class="nav-yassir">
       <div class="logo-yassir">
-        <img src="images/Logo rbt3.png" alt="Logo">
+        <img src="images/Logo rbt.png" alt="Logo">
         <span>Rihet <strong>Bladi</strong></span>
       </div>
       <ul class="nav-links">
@@ -473,7 +473,7 @@
   <section class="hero">
     <h1>Commandez vos plats tunisiens préférés 🇹🇳</h1>
     <p>Livraison rapide de plats faits maison, bien emballés</p>
-    <p>Des recettes traditionnelles comme chez vous </p>
+    <p>Des recettes traditionnelles comme chez vous : couscous, ojja, lablabi, kamounia…</p>
 
     <div class="hero-gallery">
       <div class="hero-gallery-track">
@@ -558,180 +558,320 @@
     
   </div>
 </section>
-  <style>
 
-
-/* ==== VARIABLES RIhet Bladi ==== */
-:root {
-  --rb-violet: #4b0082;
-  --rb-orange: #ff6600;
-  --rb-turquoise: #56CFCA;
-  --rb-dark: #111317;
-  --rb-light: #f9f9f9;
-  --rb-text: #333;
+<style>
+/* === Section Inscription === */
+.inscription-section {
+  padding: 70px 20px;
+  background: #141313;
 }
 
-/* Reset */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {
-  font-family: 'Segoe UI', sans-serif;
-  color: var(--rb-text);
-  background: var(--rb-light);
+.inscription-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.inscription-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+.inscription-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ece1e1;
+}
+
+.inscription-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #f9e5e5;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background: #FF6600; /* Orange Rihet Bladi */
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e65c00;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .inscription-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+</style>
+
+<!-- Section Témoignages -->
+<section class="testimonials">
+  <h2 class="section-title">Ce que disent nos clients</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Un service rapide et fiable. Rihet Bladi m’a vraiment simplifié la vie pour mes déplacements."</p>
+      <div class="testimonial-user">
+        <img src="images/clin amira.jpg" alt="Client 1">
+        <div>
+          <h4>Amira Behi</h4>
+          <span>Entrepreneuse</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">"La plateforme est moderne, intuitive et l’expérience est fluide."</p>
+      <div class="testimonial-user">
+        <img src="images/cient 1.jpg" alt="Client 2">
+        <div>
+          <h4>Youssef miled</h4>
+          <span>Manager</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Je recommande vivement ! Un vrai confort pour gérer mes besoins professionnels."</p>
+      <div class="testimonial-user">
+        <img src="images/clint fim 2.jpg" alt="Client 3">
+        <div>
+          <h4>Fatma Zahi</h4>
+          <span>Designer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+<!-- Section Solutions Rihet Bladi -->
+<section class="solutions">
+  <div class="solutions-content">
+    <h2 class="section-title">Solutions <span class="highlight">Rihet Bladi</span></h2>
+    <p class="section-description">
+      Découvrez toutes nos solutions innovantes qui simplifient votre quotidien : 
+      transport, livraison, et services adaptés à vos besoins professionnels et personnels.
+    </p>
+    <ul class="solutions-list">
+      <li>  1 Transport simple et rapide</li>
+      <li>2 Livraison de repas traditionnels</li>
+      <li>3 Gestion et suivi depuis l'application</li>
+      <li>4 Paiement en ligne sécurisé</li>
+    </ul>
+    <button class="btn">Découvrir nos solutions</button>
+  </div>
+  <div class="solutions-image">
+    <img src="images/solution.png" alt="Application Rihet Bladi">
+  </div>
+</section>
+
+<style>
+/* Section Solutions */
+.solutions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 10%;
+  background: linear-gradient(135deg, #050d7c, #050d7c);
+  color: white;
+}
+
+.solutions-content {
+  max-width: 50%;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.section-title .highlight {
+  color: #040404; /* Orange */
+}
+
+.section-description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
   line-height: 1.6;
 }
 
-/* ==== NAVBAR ==== */
-.nav-yassir {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  padding: 12px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky; top:0; z-index:100;
-}
-.logo-yassir span {
-  font-size: 1.4rem;
-  color: var(--rb-violet);
-}
-.nav-links {
-  list-style:none; display:flex; gap:25px;
-}
-.nav-links li a {
-  text-decoration:none;
-  color: var(--rb-text);
-  font-weight:600;
-  transition: 0.3s;
-  padding:8px 14px;
-  border-radius:8px;
-}
-.nav-links li a:hover {
-  background: var(--rb-turquoise);
-  color:#fff;
+.solutions-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
 }
 
-/* ==== HERO ==== */
-.hero {
-  padding: 80px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, var(--rb-violet), var(--rb-orange));
-  color:#fff;
+.solutions-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
-.hero h1 { font-size:2.8rem; margin-bottom:20px;}
-.hero p { font-size:1.2rem; opacity:0.9; }
 
-/* ==== BUTTONS ==== */
-.btn, .btn-primary {
-  display:inline-block;
-  padding:12px 28px;
-  border-radius:30px;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.3s;
-}
-.btn-primary {
-  background: var(--rb-orange);
-  color:#fff;
-}
-.btn-primary:hover { background:#e65c00; }
 .btn {
-  background: var(--rb-violet);
-  color:#fff;
-}
-.btn:hover { background:#35005f; }
-
-/* ==== SECTIONS ==== */
-section { padding:80px 20px; }
-.section-title {
-  font-size:2.2rem;
-  text-align:center;
-  margin-bottom:40px;
-  color: var(--rb-violet);
-}
-.section-description {
-  max-width:700px;
-  margin:0 auto 40px;
-  text-align:center;
-  color:#555;
+  padding: 12px 25px;
+  background: #140155;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* ==== SERVICES (grid) ==== */
-.services-gallery {
-  background:#fff;
-}
-.services-gallery-track {
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-}
-.gallery-item {
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.08);
-  padding:20px;
-  text-align:center;
-  transition:0.3s;
-}
-.gallery-item img {
-  width:100%; height:150px; object-fit:cover;
-  border-radius:10px; margin-bottom:15px;
-}
-.gallery-item:hover { transform:translateY(-5px); }
-
-/* ==== INSCRIPTION ==== */
-.inscription-section {
-  background: var(--rb-dark);
-  color:#fff;
-}
-.inscription-container {
-  display:flex; align-items:center; gap:40px; flex-wrap:wrap;
-  max-width:1100px; margin:0 auto;
-}
-.inscription-content h2 { color: var(--rb-orange); }
-
-/* ==== TÉMOIGNAGES ==== */
-.testimonials {
-  background: var(--rb-light);
-}
-.testimonials-grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap:25px;
-}
-.testimonial-card {
-  background:#fff;
-  border-radius:16px;
-  padding:25px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  transition:0.3s;
-}
-.testimonial-card:hover { transform:translateY(-8px);}
-.testimonial-user img {
-  width:50px; height:50px; border-radius:50%;
-  border:2px solid var(--rb-turquoise);
+.btn:hover {
+  background: #4e07c0;
 }
 
-/* ==== SOLUTIONS ==== */
-.solutions {
-  display:flex; flex-wrap:wrap; gap:40px; align-items:center;
-  background: linear-gradient(135deg, var(--rb-violet), var(--rb-turquoise));
-  color:#fff;
-  padding:60px 10%;
+.solutions-image img {
+  max-width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
-.solutions-list li { margin:10px 0; }
-
-/* ==== FOOTER ==== */
-.rb-footer {
-  background: var(--rb-dark);
-  color:#ccc;
-  padding:40px 20px;
-  text-align:center;
-}
-.rb-footer a { color: var(--rb-turquoise); text-decoration:none; }
-.rb-footer a:hover { color: var(--rb-orange); }
 </style>
 
+<section class="business-section">
+  <div class="business-container">
+    
+    <!-- Image -->
+    <div class="business-image">
+      <img src="images/imentravell.jfif" alt="Application professionnelle Rihet Bladi">
+    </div>
+    
+    <!-- Texte -->
+    <div class="business-content">
+      <h2>Gérez vos besoins professionnels en toute simplicité</h2>
+      <p>
+        Une plateforme simple, moderne et intuitive pour organiser vos déplacements, 
+        vos livraisons et vos commandes. 
+        Avec <strong>Rihet Bladi</strong>, tout est centralisé et optimisé pour gagner du temps et de l’efficacité.
+      </p>
+      
+      <ul class="business-points">
+        <li> Rapports et analyses en temps réel</li>
+        <li> Paiements sécurisés et simplifiés</li>
+        <li> Gain de temps et gestion optimale</li>
+      </ul>
+      
+      <div class="business-actions">
+        <a href="#" class="btn-primary">Découvrir la solution</a>
+        <a href="#contact" class="btn-secondary">Nous contacter</a>
+      </div>
+    </div>
+  </div>
+</section>
 
+<style>
+/* === Section Business === */
+.business-section {
+  padding: 70px 20px;
+  background: #212020;
+}
+
+.business-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.business-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(246, 240, 240, 0.1);
+    background: #dbc7c7;
+
+}
+
+.business-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.business-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #fff5f5;
+  margin-bottom: 25px;
+    color: #faf2f2;
+
+}
+
+.business-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.business-points li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #fff2f2;
+}
+
+.business-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: #4800ff; /* Orange Rihet Bladi */
+  color: #3410a0;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e65c00;
+}
+
+.btn-secondary {
+  border: 2px solid #56CFCA; /* Turquoise Rihet Bladi */
+  color: #56CFCA;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #56CFCA;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .business-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .business-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+</style>
 <!-- Section Plateforme Tout-en-un -->
 <section class="allinone-section">
   <div class="allinone-container">

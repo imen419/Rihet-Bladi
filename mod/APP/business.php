@@ -881,7 +881,7 @@ footer a:hover {
 
     <!-- Colonne droite (image) -->
     <div class="business-image">
-     <img src="images/woow.png " alt="Lablabi">
+     <img src="images/RIHITBLED.png " alt="Lablabi">
 
     </div>
 
